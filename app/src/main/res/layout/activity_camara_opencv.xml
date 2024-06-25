@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CamaraOpencv">
+
+  <org.opencv.android.JavaCameraView
+      android:id="@+id/camaraVista"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      app:show_fps="true"
+      tools:ignore="MissingConstraints" />
+
+  <Button
+      android:id="@+id/btnTomarFoto"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_weight="1"
+      android:elevation="10dp"
+      android:text="Tomar"
+      app:layout_constraintBottom_toTopOf="@+id/camaraVista"
+      app:layout_constraintEnd_toStartOf="@+id/camaraVista"
+      app:layout_constraintHorizontal_bias="0.521"
+      app:layout_constraintStart_toEndOf="@+id/camaraVista"
+      app:layout_constraintTop_toBottomOf="@+id/camaraVista"
+      app:layout_constraintVertical_bias="0.075" />
+
+  <Button
+      android:id="@+id/btnSobel"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:elevation="10dp"
+      android:text="Sobel"
+      app:layout_constraintBottom_toTopOf="@+id/camaraVista"
+      app:layout_constraintEnd_toStartOf="@+id/camaraVista"
+      app:layout_constraintHorizontal_bias="0.758"
+      app:layout_constraintStart_toEndOf="@+id/camaraVista"
+      app:layout_constraintTop_toBottomOf="@+id/camaraVista"
+      app:layout_constraintVertical_bias="0.076" />
+
+  <Button
+      android:id="@+id/btnMovimiento"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:elevation="10dp"
+      android:text="Movimiento"
+      app:layout_constraintBottom_toTopOf="@+id/camaraVista"
+      app:layout_constraintEnd_toStartOf="@+id/camaraVista"
+      app:layout_constraintHorizontal_bias="0.283"
+      app:layout_constraintStart_toEndOf="@+id/camaraVista"
+      app:layout_constraintTop_toBottomOf="@+id/camaraVista"
+      app:layout_constraintVertical_bias="0.073" />
+
+  <Button
+      android:id="@+id/btnSepia"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:elevation="10dp"
+      android:text="Sepia"
+      app:layout_constraintBottom_toTopOf="@+id/btnSobel"
+      app:layout_constraintEnd_toStartOf="@+id/camaraVista"
+      app:layout_constraintHorizontal_bias="0.758"
+      app:layout_constraintStart_toEndOf="@+id/camaraVista"
+      app:layout_constraintTop_toBottomOf="@+id/camaraVista"
+      app:layout_constraintVertical_bias="1.0" />
+
+  <Button
+      android:id="@+id/btnCanny"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:elevation="10dp"
+      android:text="Canny"
+      app:layout_constraintBottom_toTopOf="@+id/btnMovimiento"
+      app:layout_constraintEnd_toStartOf="@+id/camaraVista"
+      app:layout_constraintHorizontal_bias="0.247"
+      app:layout_constraintStart_toEndOf="@+id/camaraVista"
+      app:layout_constraintTop_toBottomOf="@+id/camaraVista"
+      app:layout_constraintVertical_bias="1.0" />
+
+  <Button
+      android:id="@+id/btnOriginal"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:elevation="10dp"
+      android:text="Original"
+      app:layout_constraintBottom_toTopOf="@+id/btnTomarFoto"
+      app:layout_constraintEnd_toStartOf="@+id/btnCanny"
+      app:layout_constraintHorizontal_bias="0.402"
+      app:layout_constraintStart_toEndOf="@+id/btnSepia"
+      app:layout_constraintTop_toBottomOf="@+id/camaraVista"
+      app:layout_constraintVertical_bias="1.0" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
