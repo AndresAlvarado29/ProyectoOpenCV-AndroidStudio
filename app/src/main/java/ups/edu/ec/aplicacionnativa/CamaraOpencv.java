@@ -184,7 +184,7 @@ public class CamaraOpencv extends CameraActivity implements CameraBridgeViewBase
         MultipartBody.Part body = MultipartBody.Part.createFormData("file", "foto.png", requestFile);
 
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://192.168.1.48:5000")
+                .baseUrl("http://172.16.211.7:5000")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
@@ -231,7 +231,7 @@ public class CamaraOpencv extends CameraActivity implements CameraBridgeViewBase
         nombre=nombre+new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.US).format(new Date()) + ".png";
         ContentValues values = new ContentValues();
         values.put(MediaStore.Images.Media.DISPLAY_NAME, nombre);
-        values.put(MediaStore.Images.Media.MIME_TYPE, "image/jpg");
+        values.put(MediaStore.Images.Media.MIME_TYPE, "image/png");
         values.put(MediaStore.Images.Media.RELATIVE_PATH, Environment.DIRECTORY_PICTURES);
         Uri uri = getContentResolver().insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, values);
         try {
@@ -352,7 +352,7 @@ public class CamaraOpencv extends CameraActivity implements CameraBridgeViewBase
                 }
                 Core.absdiff(frame,anterior,resta);
                 anterior = frame.clone();
-                Imgproc.threshold(resta,frame,10,255, Imgproc.THRESH_BINARY);
+                Imgproc.threshold(resta,frame,4,100, Imgproc.THRESH_BINARY);
 
                 break;
         }

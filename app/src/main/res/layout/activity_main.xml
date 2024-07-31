@@ -6,51 +6,39 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/sample_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.541"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.901" />
-
     <Button
         android:id="@+id/btnLaplacian"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Laplacian"
-        app:layout_constraintBottom_toTopOf="@+id/btnCombinar"
-        app:layout_constraintEnd_toStartOf="@+id/btnDuoTono"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnEnviar"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgCombinado"
+        app:layout_constraintStart_toEndOf="@+id/btnCombinar"
+        app:layout_constraintTop_toBottomOf="@+id/btnDuo"
         app:layout_constraintVertical_bias="0.5" />
 
     <ImageView
         android:id="@+id/imgModificado1"
-        android:layout_width="209dp"
-        android:layout_height="296dp"
-        app:layout_constraintBottom_toTopOf="@+id/imgCombinado"
+        android:layout_width="203dp"
+        android:layout_height="275dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imgModificado2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imgModificado2"
         android:layout_width="209dp"
-        android:layout_height="296dp"
-        app:layout_constraintBottom_toTopOf="@+id/imgCombinado"
+        android:layout_height="275dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/imgModificado1"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnCamara"
@@ -60,20 +48,8 @@
         app:layout_constraintBottom_toTopOf="@+id/btnEnviar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnDuoTono"
-        app:layout_constraintTop_toBottomOf="@+id/imgCombinado"
-        app:layout_constraintVertical_bias="0.5" />
-
-    <Button
-        android:id="@+id/btnCombinar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Combinar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnSuavizado"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnLaplacian"
+        app:layout_constraintStart_toEndOf="@+id/btnDuo"
+        app:layout_constraintTop_toBottomOf="@+id/txtPredict"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
@@ -84,43 +60,79 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnSuavizado"
+        app:layout_constraintStart_toEndOf="@+id/btnLaplacian"
         app:layout_constraintTop_toBottomOf="@+id/btnCamara"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/btnDuoTono"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Duotono"
-        app:layout_constraintBottom_toTopOf="@+id/sample_text"
-        app:layout_constraintEnd_toStartOf="@+id/btnCamara"
+        android:id="@+id/btnDeteccionRostros"
+        android:layout_width="135dp"
+        android:layout_height="70dp"
+        android:text="Deteccion de Rostros"
+        app:layout_constraintBottom_toTopOf="@+id/btnDuo"
+        app:layout_constraintEnd_toStartOf="@+id/txtPredict"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnLaplacian"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgCombinado"
         app:layout_constraintVertical_bias="0.5" />
 
     <Button
-        android:id="@+id/btnSuavizado"
+        android:id="@+id/btnCombinar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Suavizado"
+        android:text="Combinar"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnEnviar"
+        app:layout_constraintEnd_toStartOf="@+id/btnLaplacian"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/btnCombinar"
-        app:layout_constraintTop_toBottomOf="@+id/sample_text"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHog"
         app:layout_constraintVertical_bias="0.5" />
 
     <ImageView
         android:id="@+id/imgCombinado"
-        android:layout_width="418dp"
-        android:layout_height="246dp"
-        app:layout_constraintBottom_toTopOf="@+id/btnLaplacian"
+        android:layout_width="410dp"
+        android:layout_height="244dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgModificado1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.567" />
+
+    <Button
+        android:id="@+id/btnHog"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HOG"
+        app:layout_constraintBottom_toTopOf="@+id/btnCombinar"
+        app:layout_constraintEnd_toStartOf="@+id/btnDuo"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDeteccionRostros"
+        app:layout_constraintVertical_bias="0.5" />
+
+    <TextView
+        android:id="@+id/txtPredict"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prediccion de objeto:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.684"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.782" />
+
+    <Button
+        android:id="@+id/btnDuo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DuoTono"
+        app:layout_constraintBottom_toTopOf="@+id/btnLaplacian"
+        app:layout_constraintEnd_toStartOf="@+id/btnCamara"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btnHog"
+        app:layout_constraintTop_toBottomOf="@+id/btnDeteccionRostros"
         app:layout_constraintVertical_bias="0.5" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
